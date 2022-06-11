@@ -15,12 +15,12 @@ compile_arch() {
 }
 
 compile() {
-  for arch in arm x86
-  do
-    export ANDROID_API=$ANDROID_API_FOR_ABI_32
-    export JSC_ARCH=$arch
-    compile_arch
-  done
+  # for arch in arm x86
+  # do
+  #   export ANDROID_API=$ANDROID_API_FOR_ABI_32
+  #   export JSC_ARCH=$arch
+  #   compile_arch
+  # done
 
   for arch in arm64 x86_64
   do

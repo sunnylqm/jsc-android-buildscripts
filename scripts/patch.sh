@@ -20,14 +20,14 @@ JSC_PATCHSET=(
 
   # NDK API 16 does not have getline().
   # Since the WTF MemoryFootprint is not used in JSC, comment out all the code.
-  "jsc_fix_build_error_getline.patch"
+  # "jsc_fix_build_error_getline.patch"
 
   # NDK API 16 does not have log2().
   # Add custom polyfill
-  "jsc_fix_build_error_log2.patch"
+  # "jsc_fix_build_error_log2.patch"
 
   # NDK API 16 does not have posix_memalign
-  "jsc_fix_build_error_memalign.patch"
+  # "jsc_fix_build_error_memalign.patch"
 
   # Fix build error which related to C++StringView
   "jsc_fix_build_error_stringview.patch"
@@ -43,7 +43,7 @@ JSC_PATCHSET=(
 
   # NDK r17c does not define __mulodi4, which is being used in debug build.
   # (However, NDK r19 fixed this)
-  "jsc_fix_build_error_mulodi4.patch"
+  # "jsc_fix_build_error_mulodi4.patch"
 
   # statvfs is provided after NDK API level 19.
   # Use statfs as fallback
@@ -59,20 +59,20 @@ JSC_PATCHSET=(
   "jsc_intl_timezone.patch"
 
   # Improve heap GC mechanism like iOS
-  "jsc_heap_gc_like_ios.patch"
+  # "jsc_heap_gc_like_ios.patch"
 
   # GC concurrent issue potential fix
   # https://trac.webkit.org/changeset/251307/webkit
-  "jsc_fix_concurrent_gc_issue.patch"
+  # "jsc_fix_concurrent_gc_issue.patch"
 )
 
-if [[ "$I18N" = false ]]
-then
-  JSC_PATCHSET+=(
-    # Disable i18n for non-i18n build
-    "jsc_disable_icu.patch"
-  )
-fi
+# if [[ "$I18N" = false ]]
+# then
+#   JSC_PATCHSET+=(
+#     # Disable i18n for non-i18n build
+#     "jsc_disable_icu.patch"
+#   )
+# fi
 
 ######################################################################################
 # Patchset management end

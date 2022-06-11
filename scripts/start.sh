@@ -96,9 +96,9 @@ copyHeaders() {
   cp -Rf $TARGETDIR/webkit/Source/JavaScriptCore/API/*.h ${distDir}/include
 }
 
-export I18N=false
-prep
-compile
+# export I18N=false
+# prep
+# compile
 
 export I18N=true
 prep
